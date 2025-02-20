@@ -7,7 +7,7 @@ body {
 
 .grid-container {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* Força 2 colunas */
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 5px !important;
     max-width: 100% !important;
     margin: auto !important;
@@ -19,15 +19,28 @@ body {
     overflow: hidden !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     text-align: center !important;
-    padding: 5px !important;
-    font-size: 10px !important; /* Força texto menor */
+    padding: 0 !important; /* Remover padding para aproveitar o espaço */
+    font-size: 10px !important;
+    display: flex !important;
+    flex-direction: column !important; /* Organizar o conteúdo em coluna */
+    justify-content: flex-start !important; /* Manter o conteúdo alinhado ao topo */
+}
+
+.carousel {
+    width: 100% !important;
+    height: 80px !important; /* Forçar altura reduzida */
 }
 
 .carousel img {
     width: 100% !important;
-    height: 80px !important; /* Força altura reduzida */
+    height: 100% !important; /* Garantir que a imagem ocupe toda a altura do carousel */
     object-fit: cover !important;
     border-radius: 3px !important;
+}
+
+.property-details {
+    padding: 5px !important;
+    text-align: left !important;
 }
 
 .property-details h3 {
@@ -45,5 +58,8 @@ body {
 @media (max-width: 500px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .property-card {
+        padding: 0 !important;
     }
 }
