@@ -21,6 +21,7 @@ body {
     text-align: center !important;
     padding: 5px !important;
     font-size: 10px !important;
+    height: auto !important; /* Ajusta automaticamente a altura */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -28,27 +29,32 @@ body {
 
 .carousel img {
     width: 100% !important;
-    height: 80px !important; /* Imagem pequena */
+    height: auto !important; /* Mantém proporção da imagem */
+    max-height: 80px !important; /* Define uma altura máxima */
     object-fit: cover !important;
     border-radius: 3px !important;
-    margin-bottom: 3px !important;
 }
 
 .property-details {
     width: 100% !important;
     padding: 2px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .property-details h3 {
     font-size: 12px !important;
     margin: 2px 0 !important;
+    line-height: 1.1 !important;
 }
 
 .property-details p {
     font-size: 10px !important;
     color: #555 !important;
     margin: 1px 0 !important;
-    line-height: 1.2 !important;
+    line-height: 1 !important;
 }
 
 /* Para telas muito pequenas (menos de 400px de largura), mostrar apenas 1 por linha */
