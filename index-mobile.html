@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="layout-mobile.css">
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades Hoperty - Mobile</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 100%;
+            margin: auto;
+        }
+        .property-card {
+            width: 100%; /* Coluna única para dispositivos móveis */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            position: relative;
+            text-align: left;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel img.active {
+            opacity: 1;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            z-index: 10;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        .property-details {
+            padding: 15px;
+        }
+        .property-details h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .property-details p {
+            font-size: 14px;
+            color: #666;
+        }
+        .property-details .info {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .municipio {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 10;
+        }
+        .rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FFD700;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 10;
+        }
+        iframe {
+            width: 100%;
+            height: 1800px;
+            border: none;
+            opacity: 0; /* Começa invisível */
+            animation: fadeIn 1.5s forwards; /* Animação de aparecimento */
+        }
+        /* Definindo a animação */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container" id="property-list"></div>
+
+    <script>
+        const properties = [
+            {name: "Blue Paradise Apartment", location: "Caniço", rating: "4.9", guests: "4", rooms: "2", baths: "2", features: "Cozinha · Ar condicionado · Máquina de lavar",  images: [
+                "https://i.imgur.com/h9vIQpq.jpeg",
+                "https://i.imgur.com/BgggDFV.jpeg",
+                "https://imgur.com/Fe8ECNE.jpeg",
+                "https://imgur.com/rVkhRc4.jpeg",
+                "https://imgur.com/JpITN8m.jpeg",
+                "https://imgur.com/HM1pA93.jpeg"
+            ]
+            },
+            {name: "Holiday Beach", location: "Machico", rating: "5", guests: "2", rooms: "1", baths: "2", features: "Jacuzzi · Mesa de ping pong", images: ["https://i.imgur.com/Bbj6RR6.jpeg"]},
+            {name: "City View Condo", location: "Funchal", rating: "5", guests: "2", rooms: "1", baths: "2", features: "Vista · Piscina · Piscina aquecida", images: ["https://i.imgur.com/TDoERXn.jpeg"]},
+            {name: "Residence Plaza", location: "Santa Cruz", rating: "4.88", guests: "2", rooms: "1", baths: "1", features: "Vista mar · Wi-Fi gratuito", images: ["https://i.imgur.com/ax98qI8.jpeg"]},
+            {name: "Serenity Studio", location: "Caniço", rating: "4.7", guests: "2", rooms: "1", baths: "1", features: "Cozinha · Varanda", images: ["https://i.imgur.com/5WuebVk.jpeg"]},
+            {name: "Bem Me Quer", location: "Caniço", rating: "4.9", guests: "4", rooms: "1", baths: "1", features: "Wi-Fi · Máquina de café", images: ["https://i.imgur.com/2IvJ8xp.jpeg"]},
+            {name: "The Hideaway Retreat", location: "Santa da Serra", rating: "4.6", guests: "6", rooms: "3", baths: "2", features: "Natureza · Tranquilidade", images: ["https://i.imgur.com/HwgAeyM.jpeg"]},
+            {name: "Olá Mar", location: "Santa Cruz", rating: "4.8", guests: "3", rooms: "1", baths: "1", features: "Vista mar · Wi-Fi rápido", images: ["https://i.imgur.com/rbGA8OM.jpeg"]},
+            {name: "Sunset Sea View", location: "Funchal", rating: "4.9", guests: "1", rooms: "1", baths: "1", features: "Pôr do sol incrível · Wi-Fi rápido", images: ["https://i.imgur.com/0Q5y762.jpeg"]},
+        ];
+
+        function displayProperties() {
+            document.getElementById("property-list").innerHTML = properties.map(p => `
+                <div class='property-card'>
+                    <a href="https://hopertybnb.com/${p.name.toLowerCase().replace(/ /g, '-')}" style="text-decoration: none;">
+                        <div class='municipio'>${p.location}</div>
+                        <div class='rating'>${p.rating} ★</div>
+                        <div class='carousel'>
+                            ${p.images.map((img, i) => `<img src="${img}" class="${i === 0 ? 'active' : ''}">`).join('')}
+                        </div>
+                        <div class='property-details'>
+                            <h3>${p.name}</h3>
+                            <p>${p.guests} hóspedes - ${p.rooms} quartos - ${p.baths} banhos</p>
+                            <p class='info'>${p.features}</p>
+                        </div>
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        displayProperties();
+    </script>
+</body>
+</html>
