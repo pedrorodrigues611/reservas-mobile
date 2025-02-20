@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif !important;
     margin: 0 !important;
-    padding: 5px !important;
+    padding: 10px !important;
     background-color: #f5f5f5 !important;
 }
 
 .grid-container {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas fixas */
+    grid-template-columns: repeat(2, 1fr) !important; /* Força 2 colunas */
     gap: 5px !important;
     max-width: 100% !important;
     margin: auto !important;
@@ -20,47 +20,29 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     text-align: center !important;
     padding: 5px !important;
-    font-size: 10px !important;
-    height: 140px !important; /* Altura fixa menor */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: space-between !important;
+    font-size: 10px !important; /* Força texto menor */
 }
-
 
 .carousel img {
     width: 100% !important;
-    height: auto !important; /* Mantém proporção da imagem */
-    max-height: 80px !important; /* Define uma altura máxima */
+    height: 80px !important; /* Força altura reduzida */
     object-fit: cover !important;
     border-radius: 3px !important;
 }
 
-.property-details {
-    width: 100% !important;
-    padding: 2px 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
 .property-details h3 {
     font-size: 12px !important;
-    margin: 2px 0 !important;
-    line-height: 1.1 !important;
+    margin: 3px 0 !important;
 }
 
 .property-details p {
     font-size: 10px !important;
     color: #555 !important;
-    margin: 1px 0 !important;
-    line-height: 1 !important;
+    margin: 2px 0 !important;
 }
 
-/* Para telas muito pequenas (menos de 400px de largura), mostrar apenas 1 por linha */
-@media (max-width: 400px) {
+/* Se for ecrã muito pequeno, apenas 1 coluna */
+@media (max-width: 500px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr) !important;
     }
