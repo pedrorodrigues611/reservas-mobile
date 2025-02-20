@@ -1,5 +1,5 @@
 body {
-    font-family: 'Open Sans', sans-serif !important; /* Aplicando a fonte Open Sans */
+    font-family: 'Open Sans', sans-serif !important;
     margin: 0 !important;
     padding: 10px !important;
     background-color: #f5f5f5 !important;
@@ -11,48 +11,52 @@ body {
     gap: 5px !important;
     max-width: 100% !important;
     margin: auto !important;
+    padding: 20px !important; /* Adicionando espaçamento ao redor dos cards */
+    background-color: white !important; /* Fundo branco onde os cards estão */
+    border-radius: 20px !important; /* Arredondando os cantos do fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Sombra suave ao redor */
 }
 
 .property-card {
     background: white !important;
-    border-radius: 20px !important; /* Mantendo arredondamento no card */
+    border-radius: 20px !important; /* Arredondando os cantos dos cards */
     overflow: hidden !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Sombra mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
     text-align: center !important;
     padding: 0 !important;
     font-size: 10px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .property-card:hover {
-    transform: translateY(-5px); /* Efeito de elevação no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .carousel {
     width: 100% !important;
-    height: 150px !important; /* Aumentando a altura da área da imagem */
-    border-top-left-radius: 20px !important; /* Arredondando a parte superior esquerda da imagem */
-    border-top-right-radius: 20px !important; /* Arredondando a parte superior direita da imagem */
-    overflow: hidden !important; /* Garantindo que as imagens não ultrapassem os limites do container */
+    height: 150px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    overflow: hidden !important;
 }
 
 .carousel img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Fazendo com que a imagem cubra toda a área */
-    border-radius: 20px 20px 0 0 !important; /* Mantendo o arredondamento no topo da imagem */
+    object-fit: cover !important;
+    border-radius: 20px 20px 0 0 !important;
 }
 
 .property-details {
-    padding: 10px !important; /* Maior espaçamento no texto */
+    padding: 10px !important;
     text-align: left !important;
-    background-color: #f9f9f9 !important; /* Fundo suave para o detalhe */
-    border-bottom-left-radius: 20px !important; /* Arredondar o canto inferior esquerdo */
-    border-bottom-right-radius: 20px !important; /* Arredondar o canto inferior direito */
+    background-color: #f9f9f9 !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
 }
 
 .property-details h3 {
@@ -66,7 +70,6 @@ body {
     margin: 5px 0 !important;
 }
 
-/* Se for ecrã muito pequeno, apenas 1 coluna */
 @media (max-width: 500px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr) !important;
@@ -75,4 +78,3 @@ body {
         padding: 0 !important;
     }
 }
-
