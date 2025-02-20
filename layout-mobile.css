@@ -21,11 +21,13 @@ body {
     text-align: center !important;
     padding: 5px !important;
     font-size: 10px !important;
-    height: auto !important; /* Ajusta automaticamente a altura */
+    height: 140px !important; /* Altura fixa menor */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: space-between !important;
 }
+
 
 .carousel img {
     width: 100% !important;
