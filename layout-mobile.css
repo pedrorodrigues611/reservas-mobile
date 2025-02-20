@@ -1,6 +1,3 @@
-/* Importando a fonte 'Open Sans' */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
 body {
     font-family: 'Open Sans', sans-serif !important; /* Aplicando a fonte Open Sans */
     margin: 0 !important;
@@ -18,7 +15,7 @@ body {
 
 .property-card {
     background: white !important;
-    border-radius: 20px !important; /* Aumentando o arredondamento */
+    border-radius: 20px !important; /* Mantendo arredondamento no card */
     overflow: hidden !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Sombra mais suave */
     text-align: center !important;
@@ -38,21 +35,23 @@ body {
 .carousel {
     width: 100% !important;
     height: 80px !important;
+    border-top-left-radius: 20px !important; /* Arredondando a parte superior esquerda da imagem */
+    border-top-right-radius: 20px !important; /* Arredondando a parte superior direita da imagem */
 }
 
 .carousel img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    border-radius: 3px !important;
+    border-radius: 20px 20px 0 0 !important; /* Mantendo o arredondamento no topo da imagem */
 }
 
 .property-details {
     padding: 10px !important; /* Maior espaçamento no texto */
     text-align: left !important;
     background-color: #f9f9f9 !important; /* Fundo suave para o detalhe */
-    border-bottom-left-radius: 20px !important; /* Arredondar o canto inferior */
-    border-bottom-right-radius: 20px !important; /* Arredondar o canto inferior */
+    border-bottom-left-radius: 20px !important; /* Arredondar o canto inferior esquerdo */
+    border-bottom-right-radius: 20px !important; /* Arredondar o canto inferior direito */
 }
 
 .property-details h3 {
