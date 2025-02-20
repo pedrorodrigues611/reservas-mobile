@@ -1,5 +1,8 @@
+/* Importando a fonte 'Open Sans' */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important; /* Aplicando a fonte Open Sans */
     margin: 0 !important;
     padding: 10px !important;
     background-color: #f5f5f5 !important;
@@ -15,43 +18,52 @@ body {
 
 .property-card {
     background: white !important;
-    border-radius: 5px !important;
+    border-radius: 20px !important; /* Aumentando o arredondamento */
     overflow: hidden !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Sombra mais suave */
     text-align: center !important;
-    padding: 0 !important; /* Remover padding para aproveitar o espaço */
+    padding: 0 !important;
     font-size: 10px !important;
     display: flex !important;
-    flex-direction: column !important; /* Organizar o conteúdo em coluna */
-    justify-content: flex-start !important; /* Manter o conteúdo alinhado ao topo */
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave */
+}
+
+.property-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
 }
 
 .carousel {
     width: 100% !important;
-    height: 80px !important; /* Forçar altura reduzida */
+    height: 80px !important;
 }
 
 .carousel img {
     width: 100% !important;
-    height: 100% !important; /* Garantir que a imagem ocupe toda a altura do carousel */
+    height: 100% !important;
     object-fit: cover !important;
     border-radius: 3px !important;
 }
 
 .property-details {
-    padding: 5px !important;
+    padding: 10px !important; /* Maior espaçamento no texto */
     text-align: left !important;
+    background-color: #f9f9f9 !important; /* Fundo suave para o detalhe */
+    border-bottom-left-radius: 20px !important; /* Arredondar o canto inferior */
+    border-bottom-right-radius: 20px !important; /* Arredondar o canto inferior */
 }
 
 .property-details h3 {
-    font-size: 12px !important;
-    margin: 3px 0 !important;
+    font-size: 14px !important;
+    margin: 5px 0 !important;
 }
 
 .property-details p {
-    font-size: 10px !important;
+    font-size: 12px !important;
     color: #555 !important;
-    margin: 2px 0 !important;
+    margin: 5px 0 !important;
 }
 
 /* Se for ecrã muito pequeno, apenas 1 coluna */
