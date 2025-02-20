@@ -34,15 +34,16 @@ body {
 
 .carousel {
     width: 100% !important;
-    height: 80px !important;
+    height: 150px !important; /* Aumentando a altura da área da imagem */
     border-top-left-radius: 20px !important; /* Arredondando a parte superior esquerda da imagem */
     border-top-right-radius: 20px !important; /* Arredondando a parte superior direita da imagem */
+    overflow: hidden !important; /* Garantindo que as imagens não ultrapassem os limites do container */
 }
 
 .carousel img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: cover !important; /* Fazendo com que a imagem cubra toda a área */
     border-radius: 20px 20px 0 0 !important; /* Mantendo o arredondamento no topo da imagem */
 }
 
@@ -74,3 +75,4 @@ body {
         padding: 0 !important;
     }
 }
+
